@@ -4,18 +4,37 @@
 //HTML    Create a 'container' for the Divs
 //HTML    Use "FlexBox" to make Divs appear as a grid
 // 
-
-function Mouse_position() {
-    let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0
-}
-
-function create_container() {
+let gridSize = 16
+function create_container(size) {
     const container = document.getElementById("container");
-
-    for (let i = 0; i < 16; i++) {
-        const newDiv = document.createElement("div")
-
-        container.append(newDiv)
+    container.innerHTML = "";
+    container.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
+    
+    
+    for (let i = 0; i < size * size; i++) {
+        const cell = document.createElement("div")
+        cell.addEventListener("click", () => {
+            cell.style.backgroundColor = "Black"
+        })
+        container.append(cell)
     }
 }
-create_container()
+
+
+const button = document.getElementById("gridbutton")
+button.addEventListener("click", () => {
+    let newSize = prompt("How many columns would you like to make your grid?");
+    console.log("User Entered: ", newSize)
+    if (newSize > 100) {
+        alert("This is too many columns!")
+        newSize = 16
+    }
+
+    create_container(newSize)
+})
+
+create_container(gridSize)
+
+
+
+
