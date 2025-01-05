@@ -1,0 +1,33 @@
+<!Doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Etch A Sketch</title>
+        <script src="ETCH_A_SKETCH.js" defer></script>
+        <style>
+            #container {
+              display: grid;
+              grid-template-columns: repeat(4, 1fr); /* 4 columns */
+              gap: 3px; /* Spacing between grid cells */
+              background-color: black;
+              width: 200px;
+              height: 200px;
+            }
+          
+            #container div {
+              background-color: white;
+              border: 5px solid gray;
+              width: 100%; /* Make divs stretch */
+              height: 100%; /* Equal height for cells */
+            }
+          </style>
+          
+    </head>
+    <body>
+        <h1>James Etch A Sketch Project</h1>
+        <div id="container"></div>
+        
+    </body>
+
+</html>
